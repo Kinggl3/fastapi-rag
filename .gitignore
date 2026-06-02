@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# uv
+.uv-cache/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Project data
+data/raw/
+data/processed/
+data/indexes/
+data/corpus/
+data/*.json
+data/*.jsonl
+data/*.parquet
+data/*.faiss
+data/*.db
+
+# Eval artifacts (keep ground truth files manually committed)
+eval_data/results/
+eval_data/*.csv
+
+# Logs
+*.log
+logs/
+
+# Secrets - CRITICAL
+.env
+.env.local
+.env.*.local
+*.key
+*_api_key*
+credentials*.json
+
+# Build
+build/
+dist/
+*.whl
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Models cache (huggingface)
+.cache/
+models/
