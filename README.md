@@ -1,3 +1,14 @@
+---
+title: FastAPI RAG Assistant
+emoji: ⚡
+colorFrom: blue
+colorTo: green
+sdk: streamlit
+sdk_version: 1.57.0
+app_file: app/app.py
+pinned: false
+---
+
 # FastAPI RAG Assistant
 
 > Production-grade RAG assistant for FastAPI developers — hybrid retrieval over official docs, GitHub issues, and Stack Overflow with cross-encoder reranking and LLM generation with citations.

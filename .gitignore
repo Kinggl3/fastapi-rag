@@ -33,16 +33,13 @@ ENV/
 Thumbs.db
 desktop.ini
 
-# Project data
+# Project data — raw downloads ignored, built artifacts committed
 data/raw/
 data/processed/
-data/indexes/
 data/corpus/
 data/*.json
 data/*.jsonl
 data/*.parquet
-data/*.faiss
-data/*.db
 
 # Eval artifacts (keep ground truth files manually committed)
 eval_data/results/
