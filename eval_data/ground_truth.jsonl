@@ -1,0 +1,25 @@
+{"query": "how to define path parameters with type validation", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/path-params/"]}
+{"query": "how to add query parameters with default values", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/query-params/"]}
+{"query": "how to validate request body with Pydantic", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/body/"]}
+{"query": "how to add CORS middleware to allow cross-origin requests", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/cors/"]}
+{"query": "how to use dependency injection in FastAPI", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/dependencies/"]}
+{"query": "how to handle file uploads", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/request-files/"]}
+{"query": "how to return custom HTTP status codes", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/response-status-code/"]}
+{"query": "how to add custom middleware", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/middleware/"]}
+{"query": "how to handle HTTP exceptions and errors", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/handling-errors/"]}
+{"query": "how to add background tasks", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/background-tasks/"]}
+{"query": "how to organize routes with APIRouter", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/bigger-applications/"]}
+{"query": "how to define response model and filter output fields", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/response-model/"]}
+{"query": "how to write tests for FastAPI application", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/testing/"]}
+{"query": "how to receive form data in endpoint", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/request-forms/"]}
+{"query": "how to use OAuth2 with password and JWT tokens", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/"]}
+{"query": "how to run FastAPI app with uvicorn in production", "relevant_urls": ["https://fastapi.tiangolo.com/deployment/manually/"]}
+{"query": "how to customize OpenAPI schema and docs metadata", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/metadata/"]}
+{"query": "how to use async and await in path operations", "relevant_urls": ["https://fastapi.tiangolo.com/async/"]}
+{"query": "how to add WebSocket support", "relevant_urls": ["https://fastapi.tiangolo.com/advanced/websockets/"]}
+{"query": "how to set up SQLAlchemy database with FastAPI", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/sql-databases/"]}
+{"query": "how to use sub-dependencies and dependency with yield", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/"]}
+{"query": "how to add request body with multiple parameters", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/body-multiple-params/"]}
+{"query": "how to use HTTP Basic Auth", "relevant_urls": ["https://fastapi.tiangolo.com/advanced/security/http-basic-auth/"]}
+{"query": "how to mount sub-applications and static files", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/static-files/"]}
+{"query": "how to add field validation with Query and Path parameters", "relevant_urls": ["https://fastapi.tiangolo.com/tutorial/query-params-str-validations/"]}

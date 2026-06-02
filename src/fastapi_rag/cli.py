@@ -187,5 +187,58 @@ def query(
     console.print(Markdown(result.answer))
 
 
+@app.command()
+def eval(
+    db: Path = typer.Option(_DEFAULT_DB, "--db"),
+    faiss_index: Path = typer.Option(_DEFAULT_FAISS, "--faiss-index"),
+    bm25_index: Path = typer.Option(_DEFAULT_BM25, "--bm25-index"),
+    embed_model: str = typer.Option(_DEFAULT_EMBED, "--embed-model"),
+    reranker_model: str = typer.Option(_DEFAULT_RERANKER, "--reranker-model"),
+    gt: Path = typer.Option(Path("eval_data/ground_truth.jsonl"), "--gt", help="Ground truth file"),
+    k: int = typer.Option(10, "--k", help="Eval cutoff (MRR@k, Recall@k)"),
+    retrieval_k: int = typer.Option(20, "--retrieval-k", help="Candidates per retriever before reranking"),
+    no_rerank: bool = typer.Option(False, "--no-rerank", help="Skip reranker (faster)"),
+):
+    """Run retrieval evaluation: MRR, Recall@k, Hit Rate, latency."""
+    from .eval.harness import run_eval
+
+    console.print(f"[bold cyan]Running eval[/bold cyan] on {gt.name} ({k=})")
+
+    report = run_eval(
+        db_path=db,
+        faiss_path=faiss_index,
+        bm25_path=bm25_index,
+        embed_model=embed_model,
+        gt_path=gt,
+        retrieval_k=retrieval_k,
+        eval_k=k,
+        reranker_model=None if no_rerank else reranker_model,
+    )
+
+    table = Table(title=f"Retrieval Evaluation  (n={len(report.results)}, k={k})", show_lines=False)
+    table.add_column("Metric", style="bold")
+    table.add_column("Value", justify="right", style="cyan")
+
+    table.add_row("MRR@k",          f"{report.mrr():.4f}")
+    table.add_row("Recall@k",       f"{report.mean_recall(k):.4f}")
+    table.add_row(f"Hit Rate@{k}",  f"{report.hit_rate(k):.4f}")
+    table.add_row("Avg latency",    f"{report.mean_latency_ms():.1f} ms")
+
+    console.print(table)
+
+    # Per-query breakdown
+    miss_table = Table(title="Misses (RR=0)", show_lines=True)
+    miss_table.add_column("Query", max_width=55)
+    miss_table.add_column("Expected URL", max_width=55, style="dim")
+    for r in report.results:
+        if r.reciprocal_rank == 0:
+            miss_table.add_row(r.query, r.relevant_urls[0])
+
+    if miss_table.row_count:
+        console.print(miss_table)
+    else:
+        console.print("[green]No misses — all queries hit in top-k![/green]")
+
+
 if __name__ == "__main__":
     app()
