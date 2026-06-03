@@ -24,7 +24,7 @@ _DB = _ROOT / "data" / "corpus.db"
 _FAISS = _ROOT / "data" / "indexes" / "docs.faiss"
 _BM25 = _ROOT / "data" / "indexes" / "docs.bm25"
 _EMBED_MODEL = "BAAI/bge-small-en-v1.5"
-_RERANKER_MODEL = "BAAI/bge-reranker-v2-m3"
+_RERANKER_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 _LLM_MODEL = "gemini-2.5-flash"
 
 
@@ -60,7 +60,7 @@ with st.sidebar:
     st.divider()
 
     reranker_k = st.slider("Results sent to LLM", min_value=3, max_value=15, value=8)
-    use_reranker = st.toggle("Use reranker", value=True)
+    use_reranker = st.toggle("Use reranker", value=False)
     st.divider()
     st.markdown(
         "**Sources:** [FastAPI docs](https://fastapi.tiangolo.com)  \n"
